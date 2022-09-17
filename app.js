@@ -5,7 +5,11 @@ const submitBtn = document.querySelector("#submit-btn");
 const outputEl = document.querySelector("#output");
 
 function calculateProfitandLoss(initial, quantiity, current) {
-  if (initial > current) {
+  if (quantiity < 0) {
+    {
+      outputEl.innerText = "Stocks can't have a negative value";
+    }
+  } else if (initial > current) {
     var loss = initial - current;
     var lossPercentage = (loss / initial) * 100;
 
